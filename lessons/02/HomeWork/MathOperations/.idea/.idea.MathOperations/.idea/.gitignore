@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/contentModel.xml
+/.idea.MathOperations.iml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../../:\Users\Helga\RiderProjects\cs-course\lessons\02\HomeWork\MathOperations\.idea\.idea.MathOperations\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

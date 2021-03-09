@@ -25,10 +25,10 @@ namespace MathOperations
                     out number2
                 ))
                 {
-                    Console.WriteLine($"Сумма равна {number1 + number2}");
-                    Console.WriteLine($"Разность равна {number1 - number2}");
-                    Console.WriteLine($"Произведение равно {number1 * number2}");
-                    Console.WriteLine($"Частное равно {number1 / number2}");
+                    Console.WriteLine($"number1 + number2 = {number1 + number2}");
+                    Console.WriteLine($"number1 - number2 = {number1 - number2}");
+                    Console.WriteLine($"number1 * number2 = {number1 * number2}");
+                    Console.WriteLine($"number1 / number2 = {number1 / number2}");
                 }
                 else
                 {

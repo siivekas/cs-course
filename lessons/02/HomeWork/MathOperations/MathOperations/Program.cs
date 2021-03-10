@@ -35,7 +35,8 @@ namespace MathOperations
                         "1 - subtraction (-)",
                         "2 - multiplication (*)",
                         "3 - division (/)",
-                        "4 - exponentiation (^)"
+                        "4 - remainder of division (%)",
+                        "5 - exponentiation (^)"
                     };
                     foreach (string phrase in phrases)
                     {
@@ -46,7 +47,7 @@ namespace MathOperations
                     if (
                         int.TryParse(Console.ReadLine(), out operationType) &&
                         operationType >= 0 &&
-                        operationType <= 4
+                        operationType <= 5
                     )
                     {
                         // выводим результат
@@ -60,12 +61,14 @@ namespace MathOperations
                                 break;
                             case 3: Console.WriteLine($"Quotient equals to {number1 / number2}");
                                 break;
-                            case 4: Console.WriteLine($"{number1} raised to the power of {number2} equals to {Math.Pow(number1, number2)}");
+                            case 4: Console.WriteLine($"Remainder of division equals to {number1 % number2}");
+                                break;
+                            case 5: Console.WriteLine($"{number1} raised to the power of {number2} equals to {Math.Pow(number1, number2)}");
                                 break;
                         }
                         
                         // подтверждение завершения операции
-                        Console.WriteLine("Press eny key to finish process");
+                        Console.WriteLine("Press any key to finish process");
                         Console.ReadKey();
                     }
                     else

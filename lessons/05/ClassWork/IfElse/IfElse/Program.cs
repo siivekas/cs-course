@@ -18,10 +18,7 @@ namespace IfElse
             string label;
             int lastChar = int.Parse(rawAge.Substring(rawAge.Length - 1));
 
-            if (age >= 10 && age <= 19)
-            {
-                label = "лет";
-            } else if (lastChar >= 5)
+            if ((age >= 10 && age <= 19) || lastChar >= 5 || lastChar == 0)
             {
                 label = "лет";
             } else if (lastChar >= 2)

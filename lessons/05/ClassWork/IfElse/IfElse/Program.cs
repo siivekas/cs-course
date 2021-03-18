@@ -8,15 +8,14 @@ namespace IfElse
         {
             Console.WriteLine("Введите возраст");
 
-            string rawAge = Console.ReadLine();
-            if (!int.TryParse(rawAge, out int age))
+            if (!int.TryParse(Console.ReadLine(), out int age))
             {
                 Console.WriteLine("Это не возраст");
                 return;
             }
 
             string label;
-            int lastChar = int.Parse(rawAge.Substring(rawAge.Length - 1));
+            int lastChar = age % 10;
 
             if ((age >= 10 && age <= 19) || lastChar >= 5 || lastChar == 0)
             {

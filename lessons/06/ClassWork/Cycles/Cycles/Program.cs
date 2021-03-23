@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Cycles
 {
@@ -20,26 +21,34 @@ namespace Cycles
             for (int weekDay = 0; weekDay < marks.Length; weekDay++)
             {
                 double daySum = 0.0;
-                try
-                {
-                    foreach (int mark in marks[weekDay])
-                    {
-                        marksNum++;
-                        daySum += mark;
-                    }
-                    weekSum += daySum;
-                    Console.WriteLine(
-                        $"The average mark for day #{weekDay + 1}: {Math.Round(daySum / marks[weekDay].Length, 1)}");
-                }
-                catch (Exception)
+                if (marks[weekDay] is null)
                 {
                     Console.WriteLine($"The average mark for day #{weekDay + 1}: N/A");
                     continue;
                 }
+
+                foreach (int mark in marks[weekDay])
+                {
+                    marksNum++;
+                    daySum += mark;
+                }
+
+                weekSum += daySum;
+                Console.WriteLine(
+                    $"The average mark for day #{weekDay + 1}: {Math.Round(daySum / marks[weekDay].Length, 1)}");
             }
 
             Console.WriteLine(
                 $"The average mark for whole week: {Math.Round(weekSum / marksNum, 1)}");
+
+            FinishProcess();
+        }
+
+        static void FinishProcess(int milliseconds = 0)
+        {
+            Thread.Sleep(milliseconds);
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }

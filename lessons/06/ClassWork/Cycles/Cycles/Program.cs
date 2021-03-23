@@ -7,12 +7,17 @@ namespace Cycles
         static void Main(string[] args)
         {
             string userInput;
-            Console.WriteLine("Enter some string. Entering \"exit\" will finish process.");
+            Console.WriteLine("Enter string 15 or less symbols long");
             do
             {
                 userInput = Console.ReadLine();
-                if(userInput == "exit") break;
-            } while (true);
+                if (userInput.Length > 15)
+                {
+                    Console.WriteLine("Too long string, try once more");
+                    continue;
+                }
+                Console.WriteLine($"Entered string length is {userInput.Length}");
+            } while (userInput != "exit");
         }
     }
 }

@@ -6,18 +6,15 @@ namespace Cycles
     {
         static void Main(string[] args)
         {
-            string userInput;
-            Console.WriteLine("Enter string 15 or less symbols long");
-            do
+            int[] ar = {1, 2, 3, 4, 5, 6, 7};
+            int i= 0;
+            int sum = 0;
+            while (i < ar.Length)
             {
-                userInput = Console.ReadLine();
-                if (userInput.Length > 15)
-                {
-                    Console.WriteLine("Too long string, try once more");
-                    continue;
-                }
-                Console.WriteLine($"Entered string length is {userInput.Length}");
-            } while (userInput != "exit");
+                sum += ar[i];
+                Console.WriteLine($"Now sum is {sum}");
+                i++;
+            }
         }
     }
 }

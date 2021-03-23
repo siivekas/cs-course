@@ -11,7 +11,8 @@ namespace Cycles
             do
             {
                 userInput = Console.ReadLine();
-            } while (userInput != "exit");
+                if(userInput == "exit") break;
+            } while (true);
         }
     }
 }

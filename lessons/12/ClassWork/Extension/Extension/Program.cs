@@ -6,22 +6,22 @@ namespace Extension
     {
         static void Main(string[] args)
         {
-            BaseDocument bd = new BaseDocument(
-                "Document",
-                "#bebebe",
-                new DateTimeOffset(2000, 12, 12, 14, 55, 00, TimeSpan.Zero)
-            );
-            bd.WriteToConsole();
-
-            Passport p = new Passport(
-                "#faefd",
-                new DateTimeOffset(2003, 6, 17, 12, 00, 00, TimeSpan.Zero)
-            )
+            BaseDocument[] docs =
             {
-                Country = "Russian Federation",
-                PersonName = "Ivan Ivanov"
+                new BaseDocument("Document",
+                    "#bebebe",
+                    new DateTimeOffset(2000, 12, 12, 14, 55, 00, TimeSpan.Zero)),
+                new Passport("#faefd",
+                    new DateTimeOffset(2003, 6, 17, 12, 00, 00, TimeSpan.Zero),
+                    "Russian Federation",
+                    "Ivan Ivanov")
             };
-            p.WriteToConsole();
+
+            foreach (BaseDocument doc in docs)
+            {
+                if (doc is Passport pass) pass.ChangeIssueDate(new DateTimeOffset(DateTime.Now));
+                doc.WriteToConsole();
+            }
 
             Console.ReadKey();
         }
